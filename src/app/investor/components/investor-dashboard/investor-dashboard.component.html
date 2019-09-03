@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <div class="row pt-2 pb-2">
+        <div class="col">
+            <button class="btn btn-outline-info btn-block"
+            (click)="toggleTab('profile')"
+            >Profile</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-info btn-block"
+               (click)="toggleTab('requests')"
+            >Requests</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-info btn-block"
+            (click)="toggleTab('achievements')"
+            >Achievemnets</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-info btn-block"
+            (click)="toggleTab('boost')"
+            >Boost</button>
+        </div>
+        <!-- <div class="col">
+           <button class="btn btn-outline-info btn-block"
+           (click)="toggleTab('forum')"
+           >ClassRoom</button>
+       </div>
+       <div class="col">
+           <button class="btn btn-outline-info btn-block"
+           (click)="toggleTab('learn')"
+           >News</button>
+       </div> -->
+    </div>
+</div>
+
+
+<div class="container p-3">
+    <router-outlet></router-outlet>
+</div>
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!-- <div *ngFor="let item of reqests">
+    <div class="border hoverable" [class.border-danger]="item.status==='REJECTED'" [class.border-success]="item.status === 'ACCEPTED' ">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-9">
+                    {{item.FirstName}} {{item.LastName}}
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-sm btn-red" (click)="cancelReq(item)">Cancel</button>
+                </div>
+            </div>
+            <div class="row">
+                <ul>
+                    <li>Subject - {{item.subject}}</li>
+                    <li>Day - {{item.day}}</li>
+                    <li>Location - {{item.location}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+ <div *ngFor="let item of reqests">
+
+    <p (click)="gotoTutor(item.tutor)" style="cursor:pointer;">Your request to <strong>{{item.FirstName + ' ' +
+            item.LastName}} for <strong>{{item.subject}}</strong> on</strong>
+        <strong>{{item.day}}</strong> at <strong>{{item.location}}</strong> has been
+
+        <span *ngIf="item.status === 'REJECTED' "><strong class="red-text">rejected.</strong></span>
+        <span *ngIf="item.status === 'ACCEPTED' "><strong class="green-text">accepted.</strong></span>
+        <span *ngIf="item.status === 'SENT' "><strong>sent.</strong></span>
+
+    </p>
+    <hr>
+</div>
