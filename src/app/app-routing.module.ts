@@ -12,6 +12,11 @@ import { VerificationComponent } from './components/shared/verification/verifica
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthGaurd } from './shared/services/authguard.service';
+import { InvestorAuthGuardService } from './shared/services/investorAuthGuard.service';
+import { ProfessionalAuthGuardService } from './shared/services/professionalAuthGuard.service';
+
+
+
 const routes: Routes = [
 
   {
@@ -45,18 +50,32 @@ const routes: Routes = [
 {
     path: 'registerProfessional',
     component: RegisterProfessionalComponent
-},
+}
+,
+    {
+        path: 'investor',
+        loadChildren: './investor/investor.module#InvestorModule',
+        canActivate: [AuthGaurd, InvestorAuthGuardService]
+    },
+    {
+        path: 'professional',
+        loadChildren: './professional/professional.module#ProfessionalModule',
+        canActivate: [AuthGaurd, ProfessionalAuthGuardService]
+    },
 {
     path: '**',
     component: PageNotFoundComponent
 }
 
-
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    ],
 })
 export class AppRoutingModule { }

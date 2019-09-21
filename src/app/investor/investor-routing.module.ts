@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { InvestorDashboardComponent } from './components/investor-dashboard/investor-dashboard.component';
-//import { InvestorProfileEditComponent } from './components/profile/edit/edit.component';
+import { InvestorProfileEditComponent } from './components/profile/edit/edit.component';
 import { InvestorProfileComponent } from './components/profile/profile.component';
-//import { StatsComponent } from './components/investor-dashboard/stats/stats.component';
 import { RequestsComponent } from './components/investor-dashboard/requests/requests.component';
 //import { ForumComponent } from './components/investor-dashboard/forum/forum.component';
 import { AchievementsComponent } from './components/investor-dashboard/achievements/achievements.component';
@@ -30,7 +29,7 @@ const routes: Routes = [
     path: 'profile',
     component: InvestorProfileComponent,
     children: [
-      //{path: 'edit', component: InvestorProfileEditComponent}
+      {path: 'edit', component: InvestorProfileEditComponent}
     ]
   }
 ];

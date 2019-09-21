@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { InvestorCard, Price } from '../models/investor-card.model';
-//import { InvestorRequest } from 'src/app/shared/models/request.model';
+import { InvestorRequest } from 'src/app/shared/models/request.model';
 import { Subject, Observable } from 'rxjs';
 
 @Injectable()

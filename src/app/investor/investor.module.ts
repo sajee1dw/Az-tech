@@ -18,6 +18,7 @@ import { NgChatModule } from 'ng-chat';
 import { BoostComponent } from './components/investor-dashboard/boost/boost.component';
 import { NgFloatingActionButtonModule } from '@ng4746/ng-floating-action-button';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import { InvestorProfileEditComponent } from './components/profile/edit/edit.component';
 
 
 
@@ -42,10 +43,12 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
     AchieveComponent,
     RequestComponent,
     BoostComponent,
+    InvestorProfileEditComponent,
   ],
   exports: [
     InvestorDashboardComponent,
     InvestorProfileComponent,
+    InvestorProfileEditComponent,
     ReviewComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

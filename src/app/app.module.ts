@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgChatModule } from 'ng-chat';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,11 +24,9 @@ import { VerificationComponent } from './components/shared/verification/verifica
 import { AuthService } from './shared/services/auth.service';
 import { AuthGaurd } from './shared/services/authguard.service';
 import { CommonService } from './shared/services/common.service';
-//import { HttpClient } from '@angular/common/http';
 import { PusherService } from './shared/services/pusher.service';
 import { InvestorProfileComponent } from './investor/components/profile/profile.component';
 import { InvestorDashboardComponent } from './investor/components/investor-dashboard/investor-dashboard.component';
-//import { InvestorProfileEditComponent } from './investor/components/profile/edit/edit.component';
 import { ReviewComponent } from './investor/components/profile/review/review.component';
 import { RequestsComponent } from './investor/components/investor-dashboard/requests/requests.component';
 import { RequestComponent } from './investor/components/investor-dashboard/requests/request/request.component';
@@ -38,7 +37,17 @@ import { InvestorService } from './investor/shared/services/investor-service.ser
 import { ProfessionalProfileComponent } from './professional/components/professional-profile/professional-profile.component';
 import { ProfessionalDashbordComponent } from './professional/components/professional-dashbord/professional-dashbord.component';
 import { AllrequestsComponent } from './professional/components/professional-dashbord/allrequests/allrequests.component';
-
+import { RouterModule } from '@angular/router';
+import { professionalService } from './professional/shared/services/professional.service';
+import { BarRatingModule } from "ngx-bar-rating";
+import { InvestorCardListComponent } from './professional/components/professional-dashbord/investor-card-list/investor-card-list.component';
+import { InvestorCardComponent } from './professional/components/professional-dashbord/investor-card-list/investor-card/investor-card.component';
+import { AchievementComponent } from './professional/components/investor-profile/achievement/achievement.component';
+import { DetailsComponent } from './professional/components/investor-profile/details/details.component';
+import { RatingComponent } from './professional/components/investor-profile/rating/rating.component';
+import { TopNavBarComponent } from './professional/components/professional-dashbord/top-nav-bar/top-nav-bar.component';
+import { LocationComponent } from './professional/components/professional-dashbord/top-nav-bar/location/location.component';
+import { SubjectComponent } from './professional/components/professional-dashbord/top-nav-bar/subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -54,9 +63,8 @@ import { AllrequestsComponent } from './professional/components/professional-das
     LoginInvestorComponent,
     LoginProfessionalComponent,
     VerificationComponent,
-    InvestorProfileComponent, //Investor
+    InvestorProfileComponent, 
     InvestorDashboardComponent,
-   // InvestorProfileEditComponent,
     ReviewComponent,
     RequestsComponent,
     RequestComponent,
@@ -65,14 +73,26 @@ import { AllrequestsComponent } from './professional/components/professional-das
     AchieveComponent,
     ProfessionalProfileComponent,
     ProfessionalDashbordComponent,
-    AllrequestsComponent
+    AllrequestsComponent,
+    InvestorCardListComponent,
+    InvestorCardComponent,
+    AchievementComponent,
+    DetailsComponent,
+    RatingComponent,
+    TopNavBarComponent,
+    LocationComponent,
+    SubjectComponent
     
   
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    RouterModule,
     AppRoutingModule,
     HttpModule,
+    BarRatingModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
     NgChatModule,
@@ -85,9 +105,11 @@ import { AllrequestsComponent } from './professional/components/professional-das
     AuthService,
     AuthGaurd,
     InvestorService,
+    professionalService,
     PusherService,
     CommonService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

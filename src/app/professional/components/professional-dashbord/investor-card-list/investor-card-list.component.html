@@ -1,0 +1,31 @@
+<div *ngFor="let user of techerList">
+    <investor-card [investor]="user"></investor-card>
+</div>
+
+<div *ngIf="isEmpty">
+    <div class="border hoverable">
+        <div class="card-header">
+            Sorry...!
+        </div>
+        <div class="card-body">
+            <h3 class="card-title"> investor are on the way..! </h3>
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination pg-blue justify-content-center">
+        <li class="page-item">
+            <a class="page-link"  (click)="paginatePre()">Previous</a>
+        </li>
+        <li class="page-item" (click)="paginate(0)"><a class="page-link">1</a></li>
+        <li class="page-item" (click)="paginate(1)"><a class="page-link">2</a></li>
+        <li class="page-item" (click)="paginate(2)"><a class="page-link">3</a></li>
+        <li class="page-item">
+            <a class="page-link" (click)="paginateNext()">Next</a>
+        </li>
+    </ul>
+</nav>

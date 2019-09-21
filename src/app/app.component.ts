@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './shared/services/auth.service';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
@@ -7,9 +7,9 @@ import { BlockUI, NgBlockUI } from 'ng-block-ui';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-//export class AppComponent implements OnInit{}
 
-export class AppComponent  {
+
+export class AppComponent implements OnInit {
   @BlockUI() blockUI: NgBlockUI;
   title = 'InnovativeIdeaPublishingPlatform';
   isLogged: boolean = false;

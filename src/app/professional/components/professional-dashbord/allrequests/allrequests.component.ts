@@ -47,7 +47,7 @@ export class AllrequestsComponent implements OnInit {
       })
   }
 
-  gotoTutor(email){
+  gotoInvestor(email){
     this.router.navigate(['professional/investor/'+email]);
   }
 

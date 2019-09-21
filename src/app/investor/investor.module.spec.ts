@@ -1,4 +1,5 @@
 import { InvestorModule } from './investor.module';
+
 describe('InvestorModule', () => {
     let investorModule: InvestorModule;
   

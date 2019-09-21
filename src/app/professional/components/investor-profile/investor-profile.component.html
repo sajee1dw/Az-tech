@@ -1,0 +1,70 @@
+<div class="p-3 container">
+    <div class="border testimonial-card">
+  
+      <div class="card-up lighten-4 modal-header" style="height:80px;">
+        <strong> <b>
+            <h3 class="p-1">{{investor.name}}</h3>
+          </b> </strong>
+      </div>
+  
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3">
+            <div class="avatar mx-auto white pb-2 pt-4 pl-4 pr-4">
+              <div class="view overlay">
+                <img [src]="investor.imgUrl" class="rounded-circle hoverable" height="170" width="170">
+                <div class="mask flex-center rgba-black-light rounded-circle" style="height:170px; width:170px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 pb-2 text-center">
+              <app-request class="mr-4" [investorId]="investor.email"></app-request>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-7 pr-2">
+          <div class="container border p-4"  style="overflow-y: scroll; min-height:480px; max-height:480px;">
+            <h5 class="grey-text"><b> Reviews </b> </h5>
+            <hr>
+            <div *ngFor="let item of reviews">
+              <app-review [professionalName]="item.professional" [date]="item.date" [content]="item.content" [professionalImgUrl]="item.image"></app-review>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md-5">
+          <div class="container border pt-3">
+            <app-details [fname]="investor.fname" [lname]="investor.lname" [mobile]="investor.mobile" [price]="investor.price"
+              [location]="investor.location" [subject]="investor.subject" [available]="investor.time"></app-details>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+  
+  
+  <app-achievement *ngIf="investor.email"
+    [email]="investor.email"
+    [image]="investor.imgUrl"
+  ></app-achievement>
+  
+  <p
+    class="mt-5"
+  ></p>
+  
+  
+  <app-rating *ngIf="investor.rating"
+    [investor]="investor.email"
+    [rating]=investor.rating
+  ></app-rating>
