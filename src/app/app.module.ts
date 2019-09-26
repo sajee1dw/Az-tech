@@ -48,6 +48,9 @@ import { RatingComponent } from './professional/components/investor-profile/rati
 import { TopNavBarComponent } from './professional/components/professional-dashbord/top-nav-bar/top-nav-bar.component';
 import { LocationComponent } from './professional/components/professional-dashbord/top-nav-bar/location/location.component';
 import { SubjectComponent } from './professional/components/professional-dashbord/top-nav-bar/subject/subject.component';
+import { AddIdeaComponent } from './idea/components/add-idea/add-idea.component';
+import { EditIdeaComponent } from './idea/components/add-idea/edit-idea/edit-idea.component';
+
 
 @NgModule({
   declarations: [
@@ -81,7 +84,10 @@ import { SubjectComponent } from './professional/components/professional-dashbor
     RatingComponent,
     TopNavBarComponent,
     LocationComponent,
-    SubjectComponent
+    SubjectComponent,
+    AddIdeaComponent,
+    EditIdeaComponent,
+    
     
   
   ],

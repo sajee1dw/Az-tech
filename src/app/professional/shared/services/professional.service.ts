@@ -82,9 +82,9 @@ export class professionalService {
         return this.http.post('https://guarded-beyond-19031.herokuapp.com/viewProfile', { 'email': email, 'role': 'investor' });
     }
 
-    // sendRequest(request: InvestorRequest) {
-    //     return this.http.post('https://guarded-beyond-19031.herokuapp.com/makeRequest', request);
-    // }
+    sendRequest(request: InvestorRequest) {
+        return this.http.post('https://guarded-beyond-19031.herokuapp.com/makeRequest', request);
+    }
 
     getAllrequests(professional) {
         return this.http.post('https://guarded-beyond-19031.herokuapp.com/viewMyRequests', { 'professional': professional });

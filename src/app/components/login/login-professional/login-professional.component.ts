@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
+
 @Component({
   selector: 'app-login-professional',
   templateUrl: './login-professional.component.html',
@@ -56,7 +57,7 @@ export class LoginProfessionalComponent implements OnInit {
           this.toastr.successToastr('Login successfully.', 'Success!');
           localStorage.setItem('token', res.token);
           window.location.reload();
-          this.router.navigate(['professional']);
+          this.router.navigate(['professional']); // profile
         }else{
           if(!response.json().confirmed){
             this.router.navigate(['verify', {'email': response.json().email, 'role':'professional'}]);
@@ -74,6 +75,14 @@ export class LoginProfessionalComponent implements OnInit {
       });   
       
       this.form.reset();     
+  }
+
+  signIn() : void {
+
+    ////////////////
+
+    this.router.navigate(['/dashboard']);
+
   }
 
   get username(){return this.form.get('username')}

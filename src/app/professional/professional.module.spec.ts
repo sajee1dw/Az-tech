@@ -1,4 +1,4 @@
-import { professionalModule} from './professionalmodule';
+import { professionalModule} from './professional.module';
 
 describe('Professionalmodule', () => {
   it('should create an instance', () => {

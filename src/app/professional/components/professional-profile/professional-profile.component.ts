@@ -68,7 +68,7 @@ export class ProfessionalProfileComponent implements OnInit {
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (event) => {
-        this.url = event.target['result'];
+        // this.url = event.target['result'];
       }
       this.imageView = true;
       this.img = event.target.files[0];

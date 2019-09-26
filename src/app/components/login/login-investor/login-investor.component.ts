@@ -72,6 +72,13 @@ export class LoginInvestorComponent implements OnInit {
       this.form.reset();     
   }
 
+  signUp() : void {
+
+    ////////////////
+
+    this.router.navigate(['/InvestorProfile']);
+
+  }
   get username(){return this.form.get('username')}
   get password(){return this.form.get('password')}
 

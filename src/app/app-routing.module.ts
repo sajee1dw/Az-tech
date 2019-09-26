@@ -14,7 +14,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AuthGaurd } from './shared/services/authguard.service';
 import { InvestorAuthGuardService } from './shared/services/investorAuthGuard.service';
 import { ProfessionalAuthGuardService } from './shared/services/professionalAuthGuard.service';
-
+import { ProfessionalProfileComponent } from './professional/components/professional-profile/professional-profile.component';//for sample
+import { ProfessionalDashbordComponent} from './professional/components/professional-dashbord/professional-dashbord.component'; //for sample
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path : 'profile',//for sample
+    component : ProfessionalProfileComponent
   },
   {
     path: 'login',
@@ -61,7 +66,12 @@ const routes: Routes = [
         path: 'professional',
         loadChildren: './professional/professional.module#ProfessionalModule',
         canActivate: [AuthGaurd, ProfessionalAuthGuardService]
-    },
+    }
+,
+{
+  path : 'dashboard',// for sample
+  component : ProfessionalDashbordComponent
+},
 {
     path: '**',
     component: PageNotFoundComponent
