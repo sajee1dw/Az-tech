@@ -1,0 +1,24 @@
+<div style="text-align: center"><button  routerLink="/idea/addidea" class="btn btn-lg btn-primary">Add a new idea</button></div>
+
+<br><br>
+
+<div class="col-md-6 mx-auto">
+    <h1 class="text-center">Current ideas</h1>
+  </div>
+  <br><br>
+<div *ngFor="let idea of ideas">
+    
+    <div class="col-md-6 mx-auto">
+      <table>
+        <tr>
+          <td><b>{{ idea?.idea_name }}</b></td>
+        <td><button (click)="onClick( idea.id )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+
+

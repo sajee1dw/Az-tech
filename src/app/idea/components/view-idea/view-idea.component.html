@@ -1,0 +1,127 @@
+
+  <ul>
+    <li><img src="assets\images\favicon.png.png" width="20%"  ></li>
+</ul>
+
+ <ul>
+    <li><a routerLink="/idea">&lt;&lt;&lt;</a></li>
+    <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+</ul>
+
+
+
+<div *ngIf="marked1">
+<table class="table col-md-6 mx-auto">
+  <th>{{ ideas?.idea_name }}</th>
+  <tr>
+    <td>idea Description</td>
+    <td>{{ ideas?.idea_description }}</td>
+  </tr>
+  <tr>
+      <td>idea Category</td>
+      <td>{{ ideas?.idea_category }}</td>
+  </tr>
+  <!-- <div *ngIf="marked3">
+  <tr>
+    <td>Payment</td>
+    <td>{{ ideas?.payment }}</td>
+  </tr>
+  </div> -->
+
+
+  <!-- <div *ngIf="marked4">
+  <table>
+      <th>Bid details</th>
+      <tr>
+        <td>{{ bids?.maximum_value }}</td>
+    </tr>
+    <tr>
+        <td>{{ bids?.start_date }}</td>
+    </tr>
+  </table>
+</div>
+
+   <button (click)="onClick( )">Edit idea</button>
+   <button (click)="deleteidea( )">Delete idea</button>
+
+</table>
+</div> -->
+
+
+<div *ngIf="marked2">
+  <div class="background">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-5">
+            <div class="row" style="margin-top: 100px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+              <div class="col-md-12">
+                <form>
+                <label class="label control-label">idea Name</label>
+                <input type="text" class="form-control" name="idea_name" placeholder="Enter suitable idea name" [(ngModel)]="credentials.idea_name">
+                <label class="label control-label">idea Category</label>
+                <select class="form-control" name="idea_category" [(ngModel)]="credentials.idea_category">
+                  <option>Web development,IT & Software Skills</option>
+                  <option>Designing , Photo editing and Video editing</option>
+                  <option>Content writing</option>
+                  <option>Data Entry</option>
+                  <option>Other idea</option>
+                </select>
+                <label class="label control-label">idea Description</label>
+                <textarea rows="8" cols="50" name="idea_description" [(ngModel)]="credentials.idea_description"></textarea>
+
+              <button (click)="idea()" class="btn btn-info">Confirm</button>
+              <button (click)="idea()" class="btn btn-info">Cancle</button>
+  
+                <br><br>
+              </form>
+              </div>
+              <div class="col-md-6"></div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<br><br>
+
+
+<div *ngIf="marked3">
+  <b>idea Requests</b><br><br>
+
+  <div *ngFor="let proReq of ideaRequest">
+      {{ proReq?.user.first_name }} {{ proReq?.user.last_name }}
+      <button *ngIf="!proReq?.isAccepted" (click)="AcceptProReq(proReq.user.id, 'fixed')">Accept</button>
+      <div *ngIf="proReq?.isAccepted"><b>Accepted</b>
+        <button>Pay for the service</button></div>
+      <br>
+  </div>
+</div>
+
+
+<!-- <div *ngIf="marked4">
+    <b>Bid Responses</b><br><br>
+
+  <div *ngFor="let bidReq of bidRequest">
+      {{ bidReq?.user.first_name }} {{ bidReq?.user.last_name }}
+      {{ bidReq?.bid_value }}
+      <button *ngIf="!bidReq?.isAccepted" (click)="AcceptBidReq(bidReq.user.id, 'bid')">Accept</button>
+      <div *ngIf="bidReq?.isAccepted"><b>Accepted</b>
+      <button>Pay for the service</button></div>
+      <br>
+  </div>
+</div> -->
+
+
+
+<br><br>
+<b>Request Developers</b><br><br>
+
+<div *ngFor="let reqDev of requestDeveloper">
+    {{ reqDev?.user.first_name }} {{ reqDev?.user.last_name }}
+    <br>
+</div>
+
+

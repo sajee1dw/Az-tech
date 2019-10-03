@@ -49,13 +49,16 @@ import { TopNavBarComponent } from './professional/components/professional-dashb
 import { LocationComponent } from './professional/components/professional-dashbord/top-nav-bar/location/location.component';
 import { SubjectComponent } from './professional/components/professional-dashbord/top-nav-bar/subject/subject.component';
 import { AddIdeaComponent } from './idea/components/add-idea/add-idea.component';
-import { EditIdeaComponent } from './idea/components/add-idea/edit-idea/edit-idea.component';
+import { ViewIdeaComponent } from './idea/components/view-idea/view-idea.component';
+import { IdeaHomeComponent } from './idea/components/idea-home/idea-home.component';
+import { AuthIdeaService } from './idea/shared/services/auth-idea.service';
+import {AuthenticationService} from './professional/shared/services/authentication.service'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
+    PageNotFoundComponent, 
     HomeComponent,
     NavbarComponent,
     FooterComponent,
@@ -86,7 +89,9 @@ import { EditIdeaComponent } from './idea/components/add-idea/edit-idea/edit-ide
     LocationComponent,
     SubjectComponent,
     AddIdeaComponent,
-    EditIdeaComponent,
+    ViewIdeaComponent,
+    IdeaHomeComponent,
+    
     
     
   
@@ -113,7 +118,9 @@ import { EditIdeaComponent } from './idea/components/add-idea/edit-idea/edit-ide
     InvestorService,
     professionalService,
     PusherService,
-    CommonService
+    CommonService,
+    AuthIdeaService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]

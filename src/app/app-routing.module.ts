@@ -16,10 +16,10 @@ import { InvestorAuthGuardService } from './shared/services/investorAuthGuard.se
 import { ProfessionalAuthGuardService } from './shared/services/professionalAuthGuard.service';
 import { ProfessionalProfileComponent } from './professional/components/professional-profile/professional-profile.component';//for sample
 import { ProfessionalDashbordComponent} from './professional/components/professional-dashbord/professional-dashbord.component'; //for sample
-
+import { IdeaHomeComponent} from './idea/components/idea-home/idea-home.component'
 
 const routes: Routes = [
-
+                  
   {
     path: '',
     component: HomeComponent
@@ -55,6 +55,10 @@ const routes: Routes = [
 {
     path: 'registerProfessional',
     component: RegisterProfessionalComponent
+},
+{
+  path: 'ideahome',
+  component: IdeaHomeComponent
 }
 ,
     {

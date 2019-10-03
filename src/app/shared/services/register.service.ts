@@ -14,9 +14,9 @@ export class RegisterService {
     return this.http.post("https://guarded-beyond-19031.herokuapp.com/register", user);
   }
 
-  // profileEditinvestor(user) {
-  //   return this.http.post("http://localhost:3000/investorProfileEdit", user);
-  // }
+  profileEditinvestor(user) {
+    return this.http.post("http://localhost:3000/investorProfileEdit", user);
+  }
 
   googleRegister(role){
     return this.http.post("https://guarded-beyond-19031.herokuapp.com/google-reg", {"role": role});

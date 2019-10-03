@@ -1,15 +1,35 @@
-body, html {
-  height: 100%;
-}
-.bg {
-  /* The image used */
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+html,
+        
+        .view {
+          height: 100vh;
+        }
 
-  /* Full height */
-  height: 100%;
+        @media (max-width: 500px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 815px;
+          }
+        } 
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+         @media (min-width: 1000px) and (max-width: 900px) {
+          html,
+          body,
+          header,
+          .view  {
+            height: 650px;
+          }
+        }
+
+        /* .intro-2 {
+          background: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img%20(11).jpg")no-repeat center center;
+          background-size: cover;
+      } */
+        
+
+        .card {
+            background-color: rgba(229, 228, 255, 0.2);
+        }
+       
+

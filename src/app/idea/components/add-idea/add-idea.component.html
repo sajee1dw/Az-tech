@@ -1,1 +1,50 @@
-<p>add-idea works!</p>
+<ul>
+  <li><a routerLink="/idea">&lt;&lt;&lt;</a></li>
+  <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+</ul>
+
+
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-5">
+        <div class="row" style="margin-top: 100px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+          <div class="col-md-12">
+            <form (submit)="Addidea()">
+            <label class="label control-label">idea Name</label>
+            <input type="text" class="form-control" name="idea_name" placeholder="Enter suitable idea name" [(ngModel)]="credentials.idea_name">
+            <label class="label control-label">idea Category</label>
+            <select class="form-control" name="idea_category" [(ngModel)]="credentials.idea_category">
+              <option>Web development,IT & Software Skills</option>
+              <option>Designing , Photo editing and Video editing</option>
+              <option>Content writing</option>
+              <option>Data Entry</option>
+              <option>Other idea</option>
+            </select>
+            <label class="label control-label">idea Description</label>
+            <textarea rows="8" cols="50" name="idea_description" [(ngModel)]="credentials.idea_description"></textarea>
+
+            <a (click)="fixedPrice()" class="btn btn-info">Set fixed price</a>
+            <a (click)="startBid()" class="btn btn-info">Start a bid</a>
+            
+           <div *ngIf="marked1"> <label class="label control-label">Fixed price</label>
+            <input type="text" class="form-control" name="payment" placeholder="Payment for the service" [(ngModel)]="credentials.payment">
+          </div>
+
+          <div *ngIf="marked2">  
+                  <label class="label control-label">Maximum bid value</label>
+                  <input type="text" class="form-control" name="max_value" placeholder="Maximum bid value" [(ngModel)]="credential.maximum_value">
+          </div>
+
+          <button type="submit" class="btn btn-info">Post the idea</button>
+
+            <br><br>
+          </form>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>

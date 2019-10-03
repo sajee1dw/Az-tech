@@ -81,7 +81,7 @@ export class LoginProfessionalComponent implements OnInit {
 
     ////////////////
 
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/profile']);
 
   }
 
